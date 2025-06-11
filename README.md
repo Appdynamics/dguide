@@ -5,6 +5,22 @@
 What it does ?
  - Automates steps to collect troubleshooting information for various language agents , no more commands to run and gather information about agents, additional configurations or even agent logs 🚀
  - Option to generate and execute custom commands as needed on the fly.
+  
+## Pre-requisite
+
+Supported OS and Arch 
+| OS            | 
+| ------------- | 
+| MacOS(Darwin) | 
+| Linux         |
+
+| Architecture         | 
+| -------------------- |
+| x86_64 (32 & 64bit ) | 
+| arm64                |
+
+e.g. `dguide_{version}_linux_amd64.tar.gz` can run on any Linux OS with CPU arch mathing to x86_64 (64-bit)
+
 
 ## 🛠️ Installation
 dguide takes less than few seconds to install. Download the CLI and follow below steps:
