@@ -1,0 +1,32 @@
+FROM golang:1.20
+
+RUN apt-get update && apt-get -y install coreutils jq
+
+# Install from repo 
+# RUN apt-get update && apt-get install -y \
+#     coreutils \
+#     jq \
+#     curl \  
+#     tar \
+#     && rm -rf /var/lib/apt/lists/*
+# ENV DGUIDE_VERSION=0.1.0
+# ENV DGUIDE_URL=https://github.com/yourusername/dguide/releases/download/v${DGUIDE_VERSION}/dguide_${DGUIDE_VERSION}_darwin_amd64.tar.gz    
+# RUN mkdir -p /opt/dguide
+# # Download and extract the package
+# RUN curl -L ${DGUIDE_URL} -o /opt/dguide/dguide.tar.gz && \
+#     tar -xzf /opt/dguide/dguide.tar.gz -C /opt/dguide && \
+#     rm /opt/dguide/dguide.tar.gz
+
+    
+# # Run the install script
+# RUN chmod +x /opt/dguide/install.sh && \
+#     /opt/dguide/install.sh
+
+WORKDIR /dguide
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+CMD ["./build.sh"]

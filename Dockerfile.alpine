@@ -1,0 +1,13 @@
+FROM golang:1.20.14-alpine
+
+RUN apk update && \
+    apk add --no-cache procps curl jq
+
+WORKDIR /dguide
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY . .
+CMD ["./build.sh"]

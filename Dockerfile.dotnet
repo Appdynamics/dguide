@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+WORKDIR /dotnet
+RUN mkdir -p /tmp/appd
+RUN echo "Test1!" > /tmp/appd/echo_0.log
+RUN echo "Test2!" > /tmp/appd/echo_1.log
+
+
+COPY dist/dguide_linux_amd64_v1/dguide /usr/local/bin/
+
+ENTRYPOINT ["sleep", "2h"]

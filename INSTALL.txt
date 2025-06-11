@@ -1,0 +1,32 @@
+### How to install dguide & run:
+ 
+1. Run the following command to extract the files:
+ 
+tar -xzf dguide_${DGUIDE_VERSION}_linux_amd64.tar.gz -C /opt/dguide/ 
+ 
+2. Change directory to dguide:
+ 
+cd /opt/dguide   
+ 
+3. Install the script using install.sh (optional):
+ /opt/dguide/install.sh 
+ 
+4. Run the tool :
+ 
+4.1 To collect the info for java agent and write into the /tmp/dguide path:
+ 
+dguide run java -w     
+ 
+4.2 To collect the agent log from /tmp/appd, use -z:
+ 
+dguide run java -w -z
+ 
+4.3 To collect the agent log from a custom path, use -l:
+ 
+dguide run java -w -z -l /opt/<agent_logging_path>
+ 
+4. List the generated output:
+ 
+ls -l /tmp/dguide
+ 
+ Now you should be able to see all the generated diagnostic information in /tmp/dguide path. 

@@ -1,0 +1,10 @@
+commands:
+  - name: "ptop"
+    description: "Fetch top 10 CPU intensive processes"
+    script: "scripts/sysstat.sh"
+  - name: "java"
+    description: "Gather environment details for Java agent"
+    script: "scripts/javaagentstat.sh"
+  - name: "dotnet"
+    description: "Gather environment details for DotNet agent"
+    script: "scripts/dotnetagentstat.sh"  

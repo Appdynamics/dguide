@@ -1,0 +1,22 @@
+.DS_Store
+.local_release.sh
+.dockerignore
+.goreleaser.yaml
+local_release.sh
+local_update.sh
+build.sh
+
+# Ignroe binary
+dguide
+*.exe
+
+# Other files
+gh_key.txt
+
+# Log file
+*.log
+# version file 
+version.json
+# Ignore directory
+dist/
+build/
