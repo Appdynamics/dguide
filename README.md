@@ -83,13 +83,14 @@ The below demo shows how to install and run the dguide CLI.
 
 ![dguide-demo](img/dguide_quick_demo1742210637241.gif)
 
-## Submitting changes & Join the Clan ⚔️
+## Submitting changes 
 
 Generally, you should fork this repository, make changes in your own fork, and then submit a [🔗pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo). 
 
 
-`⚠️Note:`This project is open-source and hosted on our official GitHub site. We kindly request that all complaints, suggestions, and error reports be directed exclusively through the project's GitHub page. We will not be able to address concerns reported through any other channel or medium. Thank you for your understanding and cooperation.  
-
 ## Support & Report Issues
 
 [Submit your issues, complains and suggestion](ISSUES.md)
+
+
+`⚠️Note:`This project is open-source and hosted on our official GitHub site. We kindly request that all complaints, suggestions, and error reports be directed exclusively through the project's GitHub page. We will not be able to address concerns reported through any other channel or medium.
