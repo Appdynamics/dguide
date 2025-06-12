@@ -21,10 +21,10 @@ Supported OS and Arch
 
 e.g. `dguide_{version}_linux_amd64.tar.gz` can run on any Linux OS with CPU arch mathing to x86_64 (64-bit)
 
-## What next? 
+## Installation 
 
-### [Installation](INSTALL.md)
-### [Run dguide](TORUN.md)
+### 👉 [Steps for installation](INSTALL.md)
+### 👉 [How to Run dguide](TORUN.md)
 
 ## Submitting changes 
 
