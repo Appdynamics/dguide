@@ -5,19 +5,6 @@ Run dguide help command to see list of supported commands.
 ~$ dguide help
 ```
 
-Select he sub-command you want to run and collect information for a specific agent installed in your env.
-
-For example, the below command prints the top 10 CPU intensive processes on your system.
-``` 
-~$ dguide run ptop
-```
-
-The below demo shows how to install and run the dguide CLI. 
-
-![dguide-demo](img/dguide_quick_demo1742210637241.gif)
-
-
-
 ## Available command type and command names
 
 | Command_type | Command_name     | Example                     |

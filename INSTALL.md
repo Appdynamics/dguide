@@ -40,3 +40,8 @@ On MacOs ->
 sudo xattr -d com.apple.quarantine dguide
 sudo ./install.sh
 ```
+
+The below demo shows how to install and run the dguide CLI. 
+
+![dguide-demo](img/dguide_quick_demo1742210637241.gif)
+
