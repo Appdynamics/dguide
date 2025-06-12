@@ -23,7 +23,7 @@ e.g. `dguide_{version}_linux_amd64.tar.gz` can run on any Linux OS with CPU arch
 
 ## What next? 
 
-### [Install dguide](INSTALL.md)
+### [Installation](INSTALL.md)
 ### [Run dguide](TORUN.md)
 
 ## Submitting changes 
