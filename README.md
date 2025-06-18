@@ -6,10 +6,11 @@ What it does ?
  - Automates steps to collect troubleshooting information for various language agents , no more commands to run and gather information about agents, additional configurations or even agent logs 🚀
  - Option to generate and execute custom commands as needed on the fly.
 
-<div style="text-align: center;">
+<div align="center">
 
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/Appdynamics/dguide)
-![License](https://img.shields.io/github/license/AppDynamics/dguide) ![Version](https://img.shields.io/github/v/release/AppDynamics/dguide)
+![License](https://img.shields.io/github/license/AppDynamics/dguide)
+![Version](https://img.shields.io/github/v/release/AppDynamics/dguide)
 ![GitHub stars](https://img.shields.io/github/stars/AppDynamics/dguide?style=social)
 
 </div>
