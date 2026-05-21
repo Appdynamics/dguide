@@ -113,7 +113,7 @@ _install_local() {
 		_die "Binary ${_BINARY_NAME} not found in $(pwd). Extract the release tarball first, or run without a local binary to download from GitHub."
 	fi
 
-	_section 'Installing to /usr/local/bin'
+	# _section 'Installing to /usr/local/bin'
 
 	if [ ! -w "$_DEST_DIR" ]; then
 		if [ "$_OS" = "Linux" ] || [ "$_OS" = "Darwin" ]; then
@@ -293,7 +293,7 @@ Specify --version X.Y.Z explicitly.'
 		_warn 'sha256sum/shasum not found; skipping checksum verification.'
 	fi
 
-	_section 'Extracting archive'
+	# _section 'Extracting archive'
 	(
 		cd "$_TMPROOT" || exit 1
 		tar -xzf "$_ARCHIVE_PATH"
