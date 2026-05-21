@@ -28,7 +28,7 @@ var nodeCmd = &cobra.Command{
 		strings := []string{
 			tools.GetOSInfo(osType),
 			tools.GetNodeversion(),
-			tools.GetpsInfo("py"),
+			tools.GetpsInfo("node"),
 			tools.GetEnvDetails(),
 			tools.GetOptions(),
 		}
@@ -46,7 +46,7 @@ var nodeCmd = &cobra.Command{
 				dlog.Error("Error writing output: %s", err)
 			}
 		}
-		err := tools.ZipFile(logPath, enableZip)
+		err := tools.ZipFile(logPath, enableZip, outputPath)
 		if err != nil {
 			//fmt.Printf("Error zipping agent log dir %s \n", err)
 			dlog.Error("Error zipping agent log dir %s", err)

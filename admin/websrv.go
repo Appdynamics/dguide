@@ -9,42 +9,38 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// var(
-//
-//	output []byte
-//	err    error
-//
-// )
+var webSrvType string
 
 var websrvCmd = &cobra.Command{
 	Use:   "websrv",
-	Short: "Collect diag information for webserver (Apache) agent",
+	Short: "Collect diag information for webserver agent (auto-detects type from httpd -V)",
 	Run: func(cmd *cobra.Command, args []string) {
 		if osType == "" {
 			osType = runtime.GOOS
 		}
 		dlog := log.GetLogger()
-		strings := []string{
+		results := []string{
 			tools.GetOSInfo(osType),
 			tools.GetWebsrvVersion(),
 			tools.GetpsInfo("websrv"),
 			tools.GethttpdProcess(),
 			tools.GetEnvDetails(),
+			tools.CollectHttpdLogs(webSrvType, outputPath),
 		}
-		// output, err := exec.Command("sh", "-c", "cmd").CombinedOutput()
-		// if err != nil {
-		// 	fmt.Printf("Failed to run command: %s\n", err)
-		// 	return
-		// }
-		//fmt.Printf("%s\n", output)
 
-		for _, str := range strings {
+		for _, str := range results {
 			err := tools.WriteOutput([]byte(str+"\n"), prettyPrint, outputPath, "collect-websrv", true)
 			if err != nil {
 				fmt.Printf("Error writing output: %s\n", err)
 			}
 		}
-		err := tools.ZipFile(logPath, enableZip)
+		if enableZip && !cmd.Root().PersistentFlags().Changed("log-path") {
+			dlog.Error("ERROR: -z requires -l <log-dir> for websrv. " +
+				"Apache agent logs are typically at /opt/appdynamics-sdk-native/logs. " +
+				"Re-run with: dguide collect websrv -z -l /opt/appdynamics-sdk-native/logs")
+			return
+		}
+		err := tools.ZipFile(logPath, enableZip, outputPath)
 		if err != nil {
 			fmt.Printf("Error zipping agent log dir %s \n", err)
 		}
@@ -56,5 +52,7 @@ var websrvCmd = &cobra.Command{
 }
 
 func init() {
+	websrvCmd.Flags().StringVarP(&webSrvType, "server-type", "s", "auto",
+		"Web server type for log collection (auto, apache, apache-rhel, weblogic, ibm); 'auto' detects from httpd -V")
 	collectCmd.AddCommand(websrvCmd)
 }

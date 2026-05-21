@@ -4,6 +4,7 @@
 .goreleaser.yaml
 local_release.sh
 local_update.sh
+local_install.sh
 build.sh
 
 # Ignroe binary

@@ -44,15 +44,15 @@ func WriteOutput(output []byte, prettyPrint bool, outputPath string, commandName
 	return nil
 }
 
-func ZipFile(logPath string, enableZip bool) error {
+func ZipFile(logPath string, enableZip bool, outputPath string) error {
 	if enableZip {
-		err := ZipAndMove(logPath, "/tmp/dguide")
+		err := ZipAndMove(logPath, outputPath)
 		if err != nil {
 			return fmt.Errorf("\033[31mERROR\033[0m Failed to zip and move logs: %s", err)
 		}
 		//fmt.Printf("\u001B[32mSUCCESS\u001B[0m!\n")
-		//fmt.Printf("Logs zipped and moved to /tmp/dguide successfully.\n")
-		log.GetLogger().Info("Logs zipped and moved to /tmp/dguide successfully.")
+		//fmt.Printf("Logs zipped and moved to %s successfully.\n", outputPath)
+		log.GetLogger().Info("Logs zipped and moved to %s successfully.", outputPath)
 	} else {
 		//fmt.Printf("Zipping not enabled; logs not moved.\n")
 	}
@@ -60,6 +60,10 @@ func ZipFile(logPath string, enableZip bool) error {
 }
 
 func ZipAndMove(srcDir, destDir string) error {
+	if _, err := os.Stat(srcDir); os.IsNotExist(err) {
+		return fmt.Errorf("source log directory does not exist: %s", srcDir)
+	}
+
 	zipFilePath := filepath.Join(destDir, "agentlogs.zip")
 
 	// Create the destination directory if it doesn't exist

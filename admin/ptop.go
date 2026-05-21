@@ -69,7 +69,7 @@ var ptopCmd = &cobra.Command{
 		}
 
 		if (isZipEnabled){
-			err = tools.ZipFile(logPath, enableZip)
+			err = tools.ZipFile(logPath, enableZip, outputPath)
 			if err != nil {
 				fmt.Printf("Error zipping agent log dir %s \n", err)
 		    }
