@@ -1,6 +1,6 @@
 ## Quick Install (Recommended)
 
-A single `install.sh` script handles both flows: run it via curl/wget (below) to download from GitHub Releases, or run it from an extracted tarball to install the `dguide` binary already on disk. For remote installs, it detects your OS (macOS or Linux) and CPU architecture (x86_64, arm64, 32-bit), verifies the release checksum, and places `dguide` on your PATH.
+To install dguide, use one of the following methods:
 
 #### Option 1 — curl, always installs the latest release
 
@@ -29,9 +29,6 @@ If you prefer to review the script before executing it:
 ```sh
 # Download the installer
 curl -fsSL https://raw.githubusercontent.com/Appdynamics/dguide/main/install.sh -o install.sh
-
-# (Optional) inspect the script
-cat install.sh
 
 # Install latest release
 sh install.sh
